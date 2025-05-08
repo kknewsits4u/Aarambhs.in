@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: rgba(235, 244, 249, 0.156);
+  color: black;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  height: fit-content;
+}
+
+body::-webkit-scrollbar{
+  display: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none; 
+  scrollbar-width: none;    
+}
+
+
+
+
+.btn-grad {background-image: linear-gradient(45deg, #FF512F 0%, #F09819  51%, #FF512F  100%)}
+
+.btn-grad {
+   margin: 10px;
+   padding: 15px 45px;
+   text-align: center;
+   text-transform: uppercase;
+   transition: 0.5s;
+   background-size: 200% auto;
+   color: white;            
+   border-radius: 10px;
+   display: block;
+   border: none;
+ }
+
+ .btn-grad:hover {
+   background-position: left center;
+   color: #fff;
+   text-decoration: none;
+ }
+
+
