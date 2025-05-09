@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import CityDetailsSection from './CityDetailsSection';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 import LocationPinIcon from '@mui/icons-material/LocationPin';
 
 
@@ -22,6 +22,7 @@ const UpperHeader = () => {
     return () => document.removeEventListener("click", handleClick);
   }, []);
 
+  
   const location = useLocation();
   const city = location.pathname.split("/")[1];
 

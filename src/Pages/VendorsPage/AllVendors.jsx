@@ -3,17 +3,19 @@ import ReviewComponent from "../../Components/Rating&Review/ReviewComponent";
 import RatingComponent from "../../Components/Rating&Review/RatingComponent";
 import AccordionTransition from "./Components/FAQs";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
-import KeyboardDoubleArrowDownIcon from '@mui/icons-material/KeyboardDoubleArrowDown';
-
+import KeyboardDoubleArrowDownIcon from "@mui/icons-material/KeyboardDoubleArrowDown";
 import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 import ArtistDetailCard from "./Components/ArtistDetailCard";
+import { useNavigate } from "react-router-dom";
 
 const AllVendors = () => {
+
   const [selectedDate, setSelectedDate] = useState(null);
   const [isBooked, setIsBooked] = useState(false);
   const [open, setOpen] = useState(false);
   const [activeTab, setActiveTab] = useState("Photos");
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
 
   const handleActiveTab = (tab) => {
     if (tab == "Photos") {
@@ -156,9 +158,15 @@ const AllVendors = () => {
     },
   ];
 
+  // booking process handle
+
+  const handleBooking = (id) => {
+    navigate(`/venues/${id}/booking`);
+  };
+
   return (
     <div className=" flex flex-col items-center justify-start max-w-[1280px] w-full min-h-[100vh] h-fit   px-2 gap-2 lg:gap-5 py-2 relative ">
-      <div className="grid grid-cols-1 xl:grid-cols-[2fr_1fr] w-full gap-5  ">
+      <div className="grid grid-cols-1  w-full  ">
         <div className="flex items-center justify-between w-full h-15 ">
           <h1 className=" text-base lg:text-lg xl:text-2xl 2xl:text-4xl font-semibold ">
             Best Wedding Photographers{" "}
@@ -173,7 +181,7 @@ const AllVendors = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 xl:grid-cols-[2fr_1fr] w-full gap-10">
+      <div className="grid grid-cols-1 xl:grid-cols-[2fr_1fr] w-full gap-5">
         <div className=" flex flex-col items-center justify-start gap-4 md:gap-2 w-full  ">
           <div className="flex items-start justify-center w-full border h-48 xs:h-60 sm:h-72 md:h-80 lg:h-96 rounded-lg bg-black ">
             <div className=" flex flex-col items-center justify-center w-1/2 p-4 gap-2 md:gap-5 h-full text-white ">
@@ -203,6 +211,9 @@ const AllVendors = () => {
               <div className=" flex items-center justify-center px-2 py-1 bg-orange-400 text-white rounded-md font-medium text-sm text-nowrap">
                 Candid{" "}
               </div>
+              <div className=" flex items-center justify-center px-2 py-1 bg-orange-400 text-white rounded-md font-medium text-sm text-nowrap">
+                Traditional
+              </div>
             </div>
 
             <div className="flex w-full gap-4 items-center justify-between md:justify-end max-md:px-1 rounded max-md:bg-gray-100 max-md:py-3 ">
@@ -215,7 +226,7 @@ const AllVendors = () => {
               </p>
               <button
                 type="button"
-                className="border border-orange-400 px-4 py-1 rounded text-base md:text-lg text-orange-400 font-medium "
+                className="border border-orange-400 px-4 focus:bg-orange-400 focus:text-white rounded text-base text-orange-400 font-medium cursor-pointer"
               >
                 I'm Interested{" "}
               </button>
@@ -225,6 +236,7 @@ const AllVendors = () => {
           <div className=" flex lg:hidden items-start justify-between w-full h-fit gap-4 border border-gray-200 p-4 rounded ">
             <ArtistDetailCard />
           </div>
+
           <div className=" flex flex-col  items-start justify-start w-full h-fit gap-2 px-4 py-2 rounded border border-gray-200  ">
             <h1 className="text-lg font-semibold">About Us</h1>
             <p className="text-gray-700 line-clamp-3 text-justify ">
@@ -363,8 +375,9 @@ const AllVendors = () => {
         </div>
 
         {/*  left card ........................... */}
+
         <div className="hidden lg:flex flex-col items-center justify-start w-full ">
-          <div className="flex flex-col items-start justify-start w-full rounded-lg  border border-gray-300 h-fit sticky top-20 p-3 gap-4  ">
+          <div className="flex flex-col items-start justify-start w-full rounded-lg  border border-gray-300 h-fit sticky top-12 p-3 gap-4  ">
             <ArtistDetailCard />
 
             <div className=" flex items-center justify-between w-full ">
@@ -375,6 +388,7 @@ const AllVendors = () => {
               </div>
               <div>
                 <button
+                  onClick={() => handleBooking(12)}
                   type="button"
                   className=" flex items-center justify-center px-4 py-2 rounded-md bg-orange-400 text-white font-medium text-sm md:text-base lg:text-base "
                 >
@@ -386,6 +400,7 @@ const AllVendors = () => {
         </div>
       </div>
 
+      {/* mobile screen book card............... */}
       <div className=" max-md:flex hidden items-center justify-between p-4  w-full h-16 border-t border-orange-200 bg-gray-100 fixed bottom-0 left-0 z-50 ">
         <div className=" flex flex-col items-start ">
           <p className=" font-semibold text-base md:text-lg">
@@ -397,6 +412,7 @@ const AllVendors = () => {
         </div>
         <div>
           <button
+            onClick={() => handleBooking(12)}
             type="button"
             className=" flex items-center justify-center px-4 py-2 rounded-md bg-orange-400 text-white font-medium text-sm md:text-base  "
           >
@@ -404,6 +420,8 @@ const AllVendors = () => {
           </button>
         </div>
       </div>
+
+      {/* terms & conditions card ................... */}
 
       <div
         className={` flex flex-col items-center justify-start
@@ -415,34 +433,32 @@ const AllVendors = () => {
                      : "-bottom-full sm:bottom-auto sm:-right-full"
                  } `}
       >
-        <div className=" flex flex-col items-center justify-start relative "  >
-        <div className=" flex items-center justify-center lg:justify-start w-full absolute top-0 lg:top-2 left-0  ">
-          <div
-            className=" flex items-center justify-center h-fit w-fit lg:rotate-270  "
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            <KeyboardDoubleArrowDownIcon
-              sx={{ color: "orange", fontWeight: "700", fontSize: "40px" }}
-            />
+        <div className=" flex flex-col items-center justify-start relative ">
+          <div className=" flex items-center justify-center lg:justify-start w-full absolute top-0 lg:top-2 left-0  ">
+            <div
+              className=" flex items-center justify-center h-fit w-fit lg:rotate-270  "
+              onClick={() => setIsOpen(!isOpen)}
+            >
+              <KeyboardDoubleArrowDownIcon
+                sx={{ color: "orange", fontWeight: "700", fontSize: "40px" }}
+              />
+            </div>
+          </div>
+          <h1 className=" w-full lg:my-4  text-lg font-semibold mt-12">
+            Terms & Conditions
+          </h1>
+          <div className=" flex flex-col items-start justify-start text-left gap-2 mt-4  lg:mt-2 ">
+            {termConditions.map((data, idx) => (
+              <p key={idx} className=" text-gray-700">
+                {" "}
+                <span className=" text-gray-800 font-medium text-base  ">
+                  {data.head} :-{" "}
+                </span>
+                {data.text}{" "}
+              </p>
+            ))}
           </div>
         </div>
-        <h1 className=" w-full lg:my-4  text-lg font-semibold mt-12">
-          Terms & Conditions
-        </h1>
-        <div className=" flex flex-col items-start justify-start text-left gap-2 mt-4  lg:mt-2 ">
-          {termConditions.map((data, idx) => (
-            <p key={idx} className=" text-gray-700">
-              {" "}
-              <span className=" text-gray-800 font-medium text-base  ">
-                {data.head} :-{" "}
-              </span>
-              {data.text}{" "}
-            </p>
-          ))}
-        </div>
-        </div>
-
-
       </div>
     </div>
   );

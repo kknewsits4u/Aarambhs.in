@@ -6,8 +6,10 @@ import CommonVendorCard from "./CommonVendorCard";
 import StoreIcon from "@mui/icons-material/Store";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 import VendorsDetailsSection from "../../Components/Navigation/Components/VendorsDetailsSection";
+import { Rating } from "@mui/material";
 
 const CityWiseDetails = () => {
+
   const [currentCity, setCurrentCity] = useState("Aarambhs");
   const location = useLocation();
   const city = location.pathname.split("/")[1];
@@ -32,7 +34,7 @@ const CityWiseDetails = () => {
     </div>
   ));
 
-  // popular categories data
+// popular categories data
 
   const popularCategory = [
     {
@@ -54,6 +56,11 @@ const CityWiseDetails = () => {
       name: "Marriage Home",
       image:
         "https://i.pinimg.com/736x/69/6d/92/696d924a5c649caa726db7a496410d90.jpg",
+    },
+    {
+      name: "Meeting Hall",
+      image:
+        "https://i.pinimg.com/736x/56/66/a5/5666a5c9918aa056fa3c3abb2481c76b.jpg",
     },
   ];
 
@@ -78,13 +85,93 @@ const CityWiseDetails = () => {
       image:
         "https://i.pinimg.com/736x/3e/1c/58/3e1c580ca4c87e46cedc3834056188a3.jpg",
     },
+    {
+      name: "Wedding Decorator",
+      image:
+        "https://i.pinimg.com/736x/cc/2d/fb/cc2dfb7e8d0de9ffa32103bdcd9bb7cb.jpg",
+    },
   ];
 
+  const handleVendorsSearch = () => {
+    setIsOpen(!isOpen);
+  };
 
 
-  const handleVendorsSearch =()=> {
-    setIsOpen(!isOpen)
-  }
+  const favouriteVendors = [
+    {
+      image: "https://i.pinimg.com/736x/cf/2c/bb/cf2cbb83a6438264a62d3d218e0b36e1.jpg",
+      name: "Shree Marriage Garden",
+      rate: "4.6",
+      verifiedStatus: "Verified",
+      location: "Bhagwan Takies, Agra",
+      price: "₹50,000 for a day",
+    },
+    {
+      image: "https://i.pinimg.com/736x/c6/0e/c1/c60ec13951d2043709cf97ec885fb4cb.jpg",
+      name: "Aman Photo Studio",
+      rate: "4.9",
+      verifiedStatus: "Verified",
+      location: "Rambagh, Agra",
+      price: "₹15,000 for 50 sheets",
+    },
+    {
+      image: "https://i.pinimg.com/736x/fc/23/8e/fc238ef9914cdbe1df6090d8b1e1fafd.jpg",
+      name: "Mehndi by Ritu",
+      rate: "4.8",
+      verifiedStatus: "Verified",
+      location: "Rambagh, Agra",
+      price: "Starting price '₹3,000' ",
+    },
+    {
+      image: "https://i.pinimg.com/736x/4a/9f/64/4a9f640484900f73a0b4080910d08d4a.jpg",
+      name: "Wedding Planner",
+      rate: "4.5",
+      verifiedStatus: "Verified",
+      location: "Baluganj, Agra",
+      price: "₹6,000 / night",
+    },
+    {
+      image: "https://i.pinimg.com/736x/98/f8/bd/98f8bd55843e555f2ba1618f4fa8d608.jpg",
+      name: "Krishna Photography",
+      rate: "4.7",
+      verifiedStatus: "Verified",
+      location: "Near Bhagwan Takies, Agra",
+      price: "Start from '₹17,000' ",
+    },
+
+    {
+      image: "https://i.pinimg.com/736x/ea/20/8b/ea208b5d72982107ddad83ae7a1634a9.jpg",
+      name: "Taj Lawn Banquet",
+      rate: "4.6",
+      verifiedStatus: "Verified",
+      location: "MG Road,Agra",
+      price: "₹60,000 for a day",
+    },
+    {
+      image: "https://i.pinimg.com/736x/72/50/0a/72500a8d15413fd1542aefef7f1d47f2.jpg",
+      name: "Henna Art by Neha",
+      rate: "4.3",
+      verifiedStatus: "Verified",
+      location: "Rambagh, Agra",
+      price: "Start from '₹2,800' ",
+    },
+    {
+      image: "https://i.pinimg.com/736x/24/cf/fd/24cffd183f696c32aeda645b7d10fb2a.jpg",
+      name: "Sunshine Residency Hotel",
+      rate: "4.2",
+      verifiedStatus: "Verified",
+      location: "Sikandara, Agra",
+      price: "₹4,800 / night",
+    },
+    {
+      image: "https://i.pinimg.com/736x/26/8f/a8/268fa84b66b9c7971522320e9f28d8a0.jpg",
+      name: "Priyanka Decorator",
+      rate: "4.5",
+      verifiedStatus: "Verified",
+      location: "New Agra, Agra",
+      price: "Start from '₹15,000'",
+    },
+  ];
 
 
   return (
@@ -100,13 +187,15 @@ const CityWiseDetails = () => {
 
         <div className="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-black/50 to-transparent text-white  max-md:gap-3 gap-5 overflow-visible pb-5 "></div>
 
-        <div className="flex flex-col items-center  justify-end absolute max-md:-bottom-5 bottom-10 left-0 w-full h-full  max-md:gap-3 gap-5 overflow-y-visible " >
+        <div className="flex flex-col items-center  justify-end absolute max-md:-bottom-5 bottom-10 left-0 w-full h-full  max-md:gap-3 gap-5 overflow-y-visible ">
           <h1 className="text-2xl text-white lg:text-3xl  xl:text-4xl font-semibold ">
             Plan your wedding in <span>{currentCity}</span>
           </h1>
 
-          <div className="flex items-center justify-start max-md:w-[80vw] max-lg:w-[60vw] w-[45vw] h-8 bg-white rounded-md  max-md:shadow-md cursor-pointer  relative "  onClick={handleVendorsSearch}  >
-
+          <div
+            className="flex items-center justify-start max-md:w-[80vw] max-lg:w-[60vw] w-[45vw] h-8 bg-white rounded-md  max-md:shadow-md cursor-pointer  relative "
+            onClick={handleVendorsSearch}
+          >
             <div className="flex items-center justify-center bg-[#FA812F] h-full w-10   rounded-tl-md rounded-bl-md ">
               <StoreIcon
                 sx={{
@@ -126,28 +215,19 @@ const CityWiseDetails = () => {
                 Find Vendors{" "}
               </p>
               <KeyboardDoubleArrowRightIcon sx={{ color: "#FA812F" }} />
-
             </div>
-            
-            {
-              isOpen  && 
-                <div className="flex w-full rounded-bl-md rounded-br-md bg-white min-h-30 h-fit absolute top-13 z-50 left-0 shadow-md " >
-                  
-                 <VendorsDetailsSection/>
 
-                </div>
-            }
-         
-
+            {isOpen && (
+              <div className="flex w-full rounded-bl-md rounded-br-md bg-white min-h-30 h-fit absolute top-13 z-50 left-0 shadow-md ">
+                <VendorsDetailsSection />
+              </div>
+            )}
           </div>
-        
-          
         </div>
-       
       </div>
 
       <div className="flex w-full h-fit flex-col items-start max-w-[1280px] max-md:pt-10 pt-5">
-        <h1 className=" w-full text-left px-3  max-md:text-base max-lg:text-lg text-2xl font-semibold text-[#FA812F]">
+        <h1 className=" w-full text-left px-3  max-md:text-base max-lg:text-lg text-2xl font-semibold text-gray-800">
           View By Category
         </h1>
         <div className="flex flex-col w-full max-w-7xl mx-auto max-md:px-1 px-4 py-4 ">
@@ -159,13 +239,14 @@ const CityWiseDetails = () => {
         </div>
       </div>
 
+
       {/* popular hotel in this city  */}
 
       <div className="flex flex-col w-full h-fit items-start justify-center max-w-[1280px] gap-5   ">
-        <h1 className=" w-full text-left px-3 text-[#FA812F] max-md:text-base max-lg:text-lg text-2xl font-semibold ">
+        <h1 className=" w-full text-left px-3 text-gray-800 max-md:text-base max-lg:text-lg text-2xl font-semibold ">
           Popular Categories
         </h1>
-        <div className=" grid max-md:grid-cols-2 max-lg:grid-cols-3 grid-cols-4 w-full px-3 gap-2">
+        <div className=" grid max-md:grid-cols-2 max-lg:grid-cols-3 grid-cols-5 w-full px-3 gap-2">
           {popularCategory.map((d, idx) => (
             <div
               key={idx}
@@ -190,12 +271,55 @@ const CityWiseDetails = () => {
         </div>
       </div>
 
+      {/*  some famous vendors in this city */}
+
+      <div className="flex w-full h-fit flex-col items-start max-w-[1280px]  pt-5">
+        <h1 className=" w-full text-left px-3  max-md:text-base max-lg:text-lg text-2xl font-semibold text-gray-800">
+          Most Famous vendors in {currentCity}
+        </h1>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 w-full max-w-7xl mx-auto max-md:px-3 px-4 py-4 gap-2 overflow-x-scroll">
+          {
+            favouriteVendors.map((data, idx) =>
+              <div key={idx} className="flex flex-col w-full h-60 lg:h-64  border border-gray-300 rounded-md hover:shadow-lg " >
+
+                <div className="flex items-center justify-center w-full h-1/2 lg:h-3/5 " >
+                  <img src={data.image} alt="vendor image" className=" w-full h-full  object-cover object-top rounded-md  " />
+                </div>
+                <div className=" flex flex-col w-full h-1/2 lg:h-2/5  items-start justify-between p-1 py-2 text-left" >
+                  <div className=" flex w-full items-center justify-between " >
+                    <h1 className="text-sm font-medium text-gray-800 md:text-base " >{data.name}</h1>
+                    <div className=" flex items-center justify-center h-6 w-6 " > <img src={data.verifiedStatus === "Verified" ? "/verified.png" : "/envrified.png"} alt="verified status" className=" h-full w-auto object-cover object-center " />  </div>
+                  </div>
+                  <div className=" flex items-center justify-start w-full  ">
+                    <Rating
+                      name="sread-only"
+                      value={data.rate}
+                      sx={{
+                        fontSize: "14px",
+                      }}
+                    />
+                  </div>
+                  <p className="text-xs  "  >{data.location}</p>
+                  <div className=" flex w-full items-center justify-between " >
+                    <p className=" text-xs " >{data.price}</p>
+                    <button type="button" className="bg-gray-100 font-medium cursor-pointer text-gray-700 text-xs px-2 lg:px-4 lg:py-1 rounded " > More</button>
+                  </div>
+
+                </div>
+
+              </div>
+            )
+          }
+        </div>
+      </div>
+
+
       {/*  other categories */}
       <div className="flex flex-col w-full h-fit items-start justify-center max-w-[1280px] py-5 gap-5">
-        <h1 className=" w-full text-left px-3  max-md:text-base max-lg:text-lg text-2xl font-semibold text-[#FA812F]">
+        <h1 className=" w-full text-left px-3  max-md:text-base max-lg:text-lg text-2xl font-semibold text-gray-800">
           Other Categories
         </h1>
-        <div className=" grid max-md:grid-cols-2 max-lg:grid-cols-3 grid-cols-4 w-full px-3 gap-2">
+        <div className=" grid max-md:grid-cols-2 max-lg:grid-cols-3 grid-cols-5 w-full px-3 gap-2">
           {otherCategory.map((d, idx) => (
             <div
               key={idx}
@@ -219,6 +343,8 @@ const CityWiseDetails = () => {
           ))}
         </div>
       </div>
+
+
     </div>
   );
 };

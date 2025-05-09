@@ -15,6 +15,7 @@ import AllVendors from "./Pages/VendorsPage/AllVendors";
 import AllRealWedding from "./Pages/RealWeddingPage/AllRealWedding";
 import AllPhotos from "./Pages/PhotosPage/AllPhotos";
 import Co_operateMettingPage from "./Pages/Co_operatePage/Co_operateMettingPage";
+import Booking from "./Pages/VendorsPage/Components/Booking";
 
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
             <Route path="/co-oporate-meeting" element={<Co_operateMettingPage />} />
             <Route path="/venues" element={<SearchPage />} />
             <Route path="/venues/:id" element={<VenueDetails />} />
+            <Route path="/vendors/:id/booking" element={<Booking />} />
           </Routes>
           <Footer />
         </BrowserRouter>
