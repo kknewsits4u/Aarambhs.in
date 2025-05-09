@@ -48,8 +48,8 @@ const UpperHeader = () => {
                 setShowDiv(true);
               }}
             >
-              <div className=" flex items-center justify-between w-fit h-6 p-2 font-semibold bg-[rgb(255,255,255)] rounded z-100 ">
-                <p className=" opacity-70 text-sm text-black mr-5">{currentCity}</p>
+              <div className=" flex items-center justify-between w-fit h-5 p-1 font-semibold bg-[rgb(255,255,255)] rounded z-100 ">
+                <p className=" opacity-70 text-xs text-black mr-4">{currentCity}</p>
                 <ArrowDropDownIcon
                   sx={{ borderRadius: "10px", fontSize: "30px" }}
                 />

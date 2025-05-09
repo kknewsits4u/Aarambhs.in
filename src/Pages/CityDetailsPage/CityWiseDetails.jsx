@@ -101,28 +101,28 @@ const CityWiseDetails = () => {
         <div className="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-black/50 to-transparent text-white  max-md:gap-3 gap-5 overflow-visible pb-5 "></div>
 
         <div className="flex flex-col items-center  justify-end absolute max-md:-bottom-5 bottom-10 left-0 w-full h-full  max-md:gap-3 gap-5 overflow-y-visible " >
-          <h1 className="text-2xl text-white lg:text-3xl  xl:text-5xl font-semibold ">
+          <h1 className="text-2xl text-white lg:text-3xl  xl:text-4xl font-semibold ">
             Plan your wedding in <span>{currentCity}</span>
           </h1>
 
-          <div className="flex items-center justify-start max-md:w-[80vw] max-lg:w-[60vw] w-[45vw] h-10 bg-white rounded-md  max-md:shadow-md cursor-pointer  relative "  onClick={handleVendorsSearch}  >
+          <div className="flex items-center justify-start max-md:w-[80vw] max-lg:w-[60vw] w-[45vw] h-8 bg-white rounded-md  max-md:shadow-md cursor-pointer  relative "  onClick={handleVendorsSearch}  >
 
-            <div className="flex items-center justify-center bg-[#FA812F] h-full w-12   rounded-tl-md rounded-bl-md ">
+            <div className="flex items-center justify-center bg-[#FA812F] h-full w-10   rounded-tl-md rounded-bl-md ">
               <StoreIcon
                 sx={{
                   color: "white",
                   fontSize: {
-                    xs: 30,
-                    sm: 32,
-                    md: 34,
-                    lg: 36,
-                    xl: 38,
+                    xs: 20,
+                    sm: 20,
+                    md: 24,
+                    lg: 28,
+                    xl: 32,
                   },
                 }}
               />
             </div>
             <div className=" flex items-center justify-between px-3  h-full w-[90%] ">
-              <p className=" text-[#FA812F] font-semibold  max-md:text-base text-lg">
+              <p className=" text-[#FA812F] font-semibold  max-md:text-sm text-base">
                 Find Vendors{" "}
               </p>
               <KeyboardDoubleArrowRightIcon sx={{ color: "#FA812F" }} />

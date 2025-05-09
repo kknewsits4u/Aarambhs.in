@@ -49,7 +49,7 @@ const BlogsSection = () => {
           {RealWedding.slice(2, 3).map((data, idx) => (
             <div
               key={idx}
-              className="w-full flex flex-col  h-auto  items-start justify-start p-2 gap-2 "
+              className="w-full flex flex-col h-auto items-start justify-start p-2 gap-2 "
             >
               <h1
                 className="text-[#FA812F] font-semibold text-base"

@@ -38,7 +38,7 @@ const Navbar = () => {
       <UpperHeader />
 
       <div
-        className=" flex w-full max-md:px-3 px-5 2xl:px-10 h-12 lg:h-10 items-center justify-between z-60 
+        className=" flex w-full max-md:px-3 px-5 2xl:px-10 h-10 lg:h-8 items-center justify-between z-60 
                shadow-md max-md:bg-[#FA812F] bg-[rgb(127,137,144)] sticky top-0 left-0 "
       >
         <div className=" flex items-center justify-center text-blue-500 font-bold z-40 max-md:gap-2 gap-5 ">
@@ -141,10 +141,10 @@ const Navbar = () => {
         )}
 
         <div className="flex items-center justify-center gap-5 rounded">
-          <div className="max-md:hidden flex items-center justify-center px-2 rounded  border border-white text-[rgb(250,129,47)] font-semibold tranform transition-all hover:scale-105 cursor-pointer text-nowrap max-md:text-xs text-sm bg-white">
-            <AddIcon  sx={{ fontSize:{ lg:20  },   }}  /> List Your Business
+          <div className="max-md:hidden flex items-center justify-center px-2 rounded  border border-white text-[rgb(250,129,47)] font-semibold tranform transition-all hover:scale-105 cursor-pointer text-nowrap text-xs bg-white">
+            <AddIcon  sx={{ fontSize:{ lg:18  },   }}  /> List Your Business
           </div>
-          <div className="flex w-6 h-6 rounded-full cursor-pointer  bg-white items-center justify-center p-1">
+          <div className="flex w-5 h-5 rounded-full cursor-pointer  bg-white items-center justify-center p-1">
             <img
               src="/icons/phone.png"
               alt="phone-icon"
@@ -152,7 +152,7 @@ const Navbar = () => {
             />
           </div>
           <div
-            className="flex w-6 h-6 rounded-full cursor-pointer bg-white"
+            className="flex w-5 h-5 rounded-full cursor-pointer bg-white"
             onClick={() => setShowButtons(!showButtons)}
           >
             <img
