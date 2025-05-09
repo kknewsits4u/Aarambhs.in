@@ -1,10 +1,6 @@
-import React, { useState } from "react";
-import AliceCarousel from "react-alice-carousel";
+
 import "react-alice-carousel/lib/alice-carousel.css";
-import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
-import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
-import Button from "@mui/material/Button";
-import { citiesData, popularSearch } from "../Store/DataStore";
+import { popularSearch } from "../Store/DataStore";
 
 function PopularSearch() {
 
