@@ -4,7 +4,7 @@ import { vanueData } from '../../Store/DataStore'
 const VenueListSection = () => {
   return (
     <div
-      className="flex flex-wrap items-start justify-start w-[60vw] h-fit rounded-md absolute top-14 left-0
+      className="flex flex-wrap items-start justify-start w-[60vw] h-fit rounded-md absolute top-10 left-0
                    opacity-0 translate-y-5 pointer-events-none
                    group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto
                    transition-all duration-300 ease-in-out z-50 p-5 shadow-xl"
@@ -17,13 +17,13 @@ const VenueListSection = () => {
               key={idx}
               className="w-full flex flex-col  h-auto  items-start justify-start p-2 gap-2 text-md text-left"
             >
-              <h1 className="text-[#FA812F] font-semibold  text-md">
+              <h1 className="text-[#FA812F] font-semibold text-base">
                 {data.category}
               </h1>
               {data.p.map((d, index) => (
               <a href={`venue/${d.type}`}  >   <p
               key={index}
-              className="text-gray-600 hover:text-[#FA812F]"
+              className="text-gray-700 hover:text-orange-500 text-sm "
               style={{
                 fontWeight:
                   index === data.p.length - 1 ? "700" : "500",
@@ -42,13 +42,13 @@ const VenueListSection = () => {
               key={idx}
               className="w-full flex flex-col  h-auto  items-start justify-start p-2 gap-2 "
             >
-              <h1 className="text-[#FA812F] font-semibold  text-md">
+              <h1 className="text-[#FA812F] font-semibold text-base">
                 {data.category}
               </h1>
               {data.p.map((d, index) => (
                <a href={`vendor/${d.type}`} ><p
                key={index}
-               className="text-gray-600 text-light hover:text-[#FA812F] "
+               className=" text-gray-700 hover:text-orange-500 text-sm "
              >
                {d.type}
              </p></a>
@@ -58,7 +58,7 @@ const VenueListSection = () => {
         </div>
 
         <div className=" w-1/2 flex flex-col h-fit gap-3 items-start">
-          <h1 className="text-[#FA812F] font-semibold text-md ">
+          <h1 className="text-[#FA812F] font-semibold text-base">
             Destination Wedding Venues
           </h1>
           <div className=" w-full grid grid-cols-3 items-center justify-center h-fit gap-5">
@@ -71,7 +71,7 @@ const VenueListSection = () => {
                     className=" object-fit  w-full h-full object-cover rounded  "
                   />
                 </div>
-                <p className="text-gray-600">Goa</p>
+                <p className=" cursor-pointer text-gray-700 text-sm">Goa</p>
               </div>
             ))}
           </div>

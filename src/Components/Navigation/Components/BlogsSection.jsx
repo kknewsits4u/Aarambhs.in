@@ -5,7 +5,7 @@ const BlogsSection = () => {
   return (
 
     <div
-      className="flex flex-wrap items-start justify-start w-[60vw] h-fit rounded-md absolute top-14 left-0
+      className="flex flex-wrap items-start justify-start w-[60vw] h-fit rounded-md absolute top-10 left-0
                    opacity-0 translate-y-5 pointer-events-none
                    group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto
                    transition-all duration-300 ease-in-out z-50 p-5  shadow-xl "
@@ -18,11 +18,11 @@ const BlogsSection = () => {
               key={idx}
               className="w-full flex flex-col  h-auto  items-start justify-start p-2 gap-2 text-md"
             >
-              <h1 className="text-[#FA812F] font-bold ">
+              <h1 className="text-[#FA812F] font-semibold text-base ">
                 {data.category}
               </h1>
               {data.p.map((d, index) => (
-                <p key={index} className="text-gray-600 ">{d.type}</p>
+                <p key={index} className="text-gray-700 hover:text-orange-500 text-sm">{d.type}</p>
               ))}
             </div>
           ))}
@@ -34,13 +34,13 @@ const BlogsSection = () => {
               className="w-full flex flex-col  h-auto  items-start justify-start p-2 gap-2 "
             >
               <h1
-                className="text-[#FA812F] font-bold "
+                className="text-[#FA812F] font-semibold text-base"
                 style={{ fontSize: "16px" }}
               >
                 {data.category}
               </h1>
               {data.p.map((d, index) => (
-                <p key={index} className="text-gray-600 ">{d.type}</p>
+                <p key={index} className="text-gray-700 hover:text-orange-500 text-sm">{d.type}</p>
               ))}
             </div>
           ))}
@@ -52,19 +52,19 @@ const BlogsSection = () => {
               className="w-full flex flex-col  h-auto  items-start justify-start p-2 gap-2 "
             >
               <h1
-                className="text-[#FA812F] font-bold"
+                className="text-[#FA812F] font-semibold text-base"
                 style={{ fontSize: "16px" }}
               >
                 {data.category}
               </h1>
               {data.p.map((d, index) => (
-                <p key={index} className="text-gray-600 ">{d.type}</p>
+                <p key={index} className="text-gray-700 hover:text-orange-500 text-sm ">{d.type}</p>
               ))}
             </div>
           ))}
         </div>
         <div className=" w-1/4 flex flex-col h-fit gap-3   px-2 ">
-          <h1 className="text-[#FA812F] font-bold text-left">
+          <h1 className="text-[#FA812F] font-semibold text-base">
             Top Blogs
           </h1>
           <div className=" w-full flex flex-col h-fit items-center justify-between gap-2 ">
@@ -76,7 +76,7 @@ const BlogsSection = () => {
                   className=" w-full h-full object-center object-cover rounded"
                 />
               </div>
-              <p className=" text-md text-gray-700">
+              <p className=" text-gray-700 hover:text-orange-500 text-sm">
                 Bridal Mehdi Design
               </p>
             </div>
@@ -88,7 +88,7 @@ const BlogsSection = () => {
                   className=" w-full h-full object-center object-cover rounded"
                 />
               </div>
-              <p className=" text-md text-gray-700">USA Trip</p>
+              <p className=" text-gray-700 hover:text-orange-500 text-sm">USA Trip</p>
             </div>
           </div>
         </div>

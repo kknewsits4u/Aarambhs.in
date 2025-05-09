@@ -80,29 +80,32 @@ const CityWiseDetails = () => {
     },
   ];
 
+
+
   const handleVendorsSearch =()=> {
     setIsOpen(!isOpen)
   }
 
+
   return (
-    <div className=" flex flex-col max-w-[1440px] w-full min-h-50  items-center  bg-white ">
-      <div className=" relative flex items-center justify-center w-full h-[60vw] md:h-[45vw] lg:h-[30vw]">
+    <div className=" flex flex-col  w-full min-h-50  items-center  bg-white ">
+      <div className=" relative flex items-center justify-center w-full h-48 sm:h-60 md:h-72 lg:h-80 xl:h-96   ">
         <div className=" flex items-center justify-center w-full h-full ">
           <img
             src="https://cdn.pixabay.com/photo/2016/11/23/17/55/atoll-1854069_1280.jpg"
             alt="detaiImage"
-            className="w-full h-full object-cover object-center   "
+            className="w-full h-full object-cover object-center "
           />
         </div>
 
         <div className="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-black/50 to-transparent text-white  max-md:gap-3 gap-5 overflow-visible pb-5 "></div>
 
         <div className="flex flex-col items-center  justify-end absolute max-md:-bottom-5 bottom-10 left-0 w-full h-full  max-md:gap-3 gap-5 overflow-y-visible " >
-          <h1 className="max-sm:text-2xl text-white lg:text-3xl  xl:text-5xl font-semibold ">
+          <h1 className="text-2xl text-white lg:text-3xl  xl:text-5xl font-semibold ">
             Plan your wedding in <span>{currentCity}</span>
           </h1>
 
-          <div className="flex items-center justify-start max-md:w-[80vw] max-lg:w-[60vw] w-[45vw] h-12 bg-white rounded-md  max-md:shadow-md cursor-pointer  relative "  onClick={handleVendorsSearch}  >
+          <div className="flex items-center justify-start max-md:w-[80vw] max-lg:w-[60vw] w-[45vw] h-10 bg-white rounded-md  max-md:shadow-md cursor-pointer  relative "  onClick={handleVendorsSearch}  >
 
             <div className="flex items-center justify-center bg-[#FA812F] h-full w-12   rounded-tl-md rounded-bl-md ">
               <StoreIcon
@@ -118,7 +121,7 @@ const CityWiseDetails = () => {
                 }}
               />
             </div>
-            <div className=" flex items-center justify-between px-3   h-full w-[90%] ">
+            <div className=" flex items-center justify-between px-3  h-full w-[90%] ">
               <p className=" text-[#FA812F] font-semibold  max-md:text-base text-lg">
                 Find Vendors{" "}
               </p>

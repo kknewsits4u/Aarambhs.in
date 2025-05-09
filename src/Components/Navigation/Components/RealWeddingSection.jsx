@@ -4,7 +4,7 @@ import { RealWedding } from '../../Store/DataStore'
 const RealWeddingSection = () => {
   return (
     <div
-      className="flex flex-wrap items-start justify-start w-[60vw] h-fit rounded-md absolute top-14 left-0
+      className="flex flex-wrap items-start justify-start w-[60vw] h-fit rounded-md absolute top-10 left-0
                    opacity-0 translate-y-5 pointer-events-none
                    group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto
                    transition-all duration-300 ease-in-out z-50 p-5  shadow-xl "
@@ -17,7 +17,7 @@ const RealWeddingSection = () => {
               key={idx}
               className="w-full flex flex-col  h-auto  items-start justify-start p-2 gap-2 text-md"
             >
-              <h1 className="text-[#FA812F] font-bold ">
+              <h1 className="text-[#FA812F] font-semibold text-base ">
                 {data.category}
               </h1>
               {data.p.map((d, index) => (
@@ -33,7 +33,7 @@ const RealWeddingSection = () => {
               className="w-full flex flex-col  h-auto  items-start justify-start p-2 gap-2 "
             >
               <h1
-                className="text-[#FA812F] font-bold "
+                className="text-[#FA812F] font-semibold text-base"
                 style={{ fontSize: "16px" }}
               >
                 {data.category}
@@ -51,7 +51,7 @@ const RealWeddingSection = () => {
               className="w-full flex flex-col  h-auto  items-start justify-start p-2 gap-2 "
             >
               <h1
-                className="text-[#FA812F] font-bold"
+                className="text-[#FA812F] font-semibold text-base"
                 style={{ fontSize: "16px" }}
               >
                 {data.category}

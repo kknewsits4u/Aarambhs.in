@@ -10,7 +10,7 @@ const VendorsDetailsSection = () => {
               key={idx}
               className="w-full flex flex-col  h-auto  items-start justify-start p-2 gap-1 text-base"
             >
-              <h1 className="text-[#FA812F] max-lg:text-sm text-sm  font-semibold">{data.category}</h1>
+              <h1 className="text-[#FA812F] font-semibold text-base">{data.category}</h1>
               {data.p.map((d, index) => (
                 <a href={`vendor/${d.type}`} ><p key={index} className="text-gray-600 max-lg:text-sm text-sm text-light text-left hover:text-[#FA812F] ">
                 {d.type}
@@ -27,7 +27,7 @@ const VendorsDetailsSection = () => {
               className="w-full flex flex-col max-lg:text-sm text-sm  h-auto  items-start justify-start p-2 gap-2 "
             >
               <h1
-                className="text-[#FA812F] max-lg:text-sm text-sm  font-semibold "
+                className="text-[#FA812F] font-semibold text-base"
                 
               >
                 {data.category}
@@ -47,13 +47,13 @@ const VendorsDetailsSection = () => {
               className="w-full flex flex-col  h-auto  items-start justify-start p-2 gap-2 "
             >
               <h1
-                className="text-[#FA812F] font-semibold max-lg:text-sm text-sm  "
+                className="text-[#FA812F] font-semibold text-base "
                 style={{ fontSize: "16px" }}
               >
                 {data.category}
               </h1>
               {data.p.map((d, index) => (
-                <a href={`vendor/${d.type}`} ><p key={index} className="text-gray-600 max-lg:text-sm text-sm  text-light hover:text-[#FA812F]">
+                <a href={`vendor/${d.type}`} ><p key={index} className="text-gray-700 max-lg:text-sm text-sm  text-light hover:text-[#FA812F]">
                 {d.type}
               </p></a>
               ))}

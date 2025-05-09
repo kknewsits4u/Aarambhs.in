@@ -4,7 +4,7 @@ import { photoData } from '../../Store/DataStore'
 const PhotosSection = () => {
   return (
     <div
-      className="flex flex-wrap items-start justify-start w-[50vw] h-fit rounded-md absolute top-14 left-0
+      className="flex flex-wrap items-start justify-start w-[50vw] h-fit rounded-md absolute top-10 left-0
                    opacity-0 translate-y-5 pointer-events-none
                    group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto
                    transition-all duration-300 ease-in-out z-50 p-5 shadow-xl"
@@ -17,11 +17,11 @@ const PhotosSection = () => {
               key={idx}
               className="w-full flex flex-col  h-auto  items-start justify-start p-2 gap-1 text-md"
             >
-              <h1 className="text-[#FA812F] font-bold ">
+              <h1 className="text-[#FA812F] font-semibold text-base">
                 {data.category}
               </h1>
               {data.p.map((d, index) => (
-                <p key={index} className="text-gray-500 ">{d.type}</p>
+                <p key={index} className="text-gray-700 hover:text-orange-500 text-sm  ">{d.type}</p>
               ))}
             </div>
           ))}
@@ -33,13 +33,13 @@ const PhotosSection = () => {
               className="w-full flex flex-col  h-auto  items-start justify-start p-2 gap-2 "
             >
               <h1
-                className="text-[#FA812F] font-bold "
+                className="text-[#FA812F] font-semibold text-base "
                 style={{ fontSize: "16px" }}
               >
                 {data.category}
               </h1>
               {data.p.map((d, index) => (
-                <p key={index} className="text-gray-500 ">{d.type}</p>
+                <p key={index} className="text-gray-700 hover:text-orange-500 text-sm  ">{d.type}</p>
               ))}
             </div>
           ))}
@@ -51,13 +51,13 @@ const PhotosSection = () => {
               className="w-full flex flex-col  h-auto  items-start justify-start p-2 gap-2 "
             >
               <h1
-                className="text-[#FA812F] font-bold"
+                className="text-[#FA812F] font-semibold text-base"
                 style={{ fontSize: "16px" }}
               >
                 {data.category}
               </h1>
               {data.p.map((d, index) => (
-                <p key={index} className="text-gray-500 ">{d.type}</p>
+                <p key={index} className="text-gray-700 hover:text-orange-500 text-sm ">{d.type}</p>
               ))}
             </div>
           ))}
