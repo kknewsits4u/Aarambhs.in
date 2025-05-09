@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Drawer from "@mui/material/Drawer";
 import DensityMediumIcon from "@mui/icons-material/DensityMedium";
-import { Button } from "@mui/material";
 import UpperHeader from "./Components/UpperHeader";
 import VendorsDetailsSection from "./Components/VendorsDetailsSection";
 import VenueListSection from "./Components/VenueListSection";
@@ -20,6 +19,7 @@ const Navbar = () => {
   const [citiesDivOpen, setCitiesDivOpen] = React.useState(false);
   const [showButtons, setShowButtons] = useState(false);
   const [totalTopCities, setTotalTopCities] = useState(0);
+  const [searchQuery, setSearchQuery] = useState("");
 
   const toggleDrawer = (newOpen) => () => {
     setOpen(newOpen);
@@ -29,8 +29,6 @@ const Navbar = () => {
     setTotalTopCities(totalTopCities);
   };
 
-  //  city search
-  const [searchQuery, setSearchQuery] = useState("");
   const handleSearchChange = (e) => {
     setSearchQuery(e.target.value);
   };
@@ -40,7 +38,7 @@ const Navbar = () => {
       <UpperHeader />
 
       <div
-        className=" flex w-full max-md:px-3 px-5 2xl:px-10 h-16 lg:h-14 items-center justify-between z-40 
+        className=" flex w-full max-md:px-3 px-5 2xl:px-10 h-16 lg:h-14 items-center justify-between z-60 
                shadow-md max-md:bg-[#FA812F] bg-[rgb(127,137,144)] sticky top-0 left-0 "
       >
         <div className=" flex items-center justify-center text-blue-500 font-bold z-40 max-md:gap-2 gap-5 ">
@@ -49,41 +47,41 @@ const Navbar = () => {
             className="flex md:hidden text-[rgb(239,74,107)]  font-extrabold items-center justify-center h-fit w-fit "
           >
             <DensityMediumIcon
-              sx={{ fontWeight: "700", fontSize: "25px", color: "white" }}
+              sx={{ fontWeight: "700", fontSize:  {  sm:24 }, color: "white" }}
             />
           </div>
 
           <a href="/">
-            <h1 className="text-xl lg:text-2xl flex items-center justify-center  text-white ">
+            <h1 className="text-xl lg:text-2xl flex items-center justify-center text-white ">
               Aarambh <span className="text-red-500">s</span>.in
             </h1>
           </a>
         </div>
 
-        <div className="hidden relative md:flex w-full xl:w-2/3  items-start justify-start  gap-5 h-full  px-5">
+        <div className="max-md:hidden relative flex w-full xl:w-2/3 items-start justify-start gap-5 h-full  px-5">
           <ul
-            className="flex h-full  items-center text-[rgb(255,255,255)] justify-between gap-5  text-sm lg:text-sm    "
+            className="flex h-full items-center text-[rgb(255,255,255)] justify-between gap-5  text-sm lg:text-sm    "
             style={{ fontWeight: "500" }}
           >
-            <li className="group  overflow-visible cursor-pointer flex  h-full items-center  hover:border-b-4 hover:border-b-white ">
+            <li className="group  overflow-visible cursor-pointer flex h-full items-center  hover:border-b-4 hover:border-b-white ">
               Vanues
               <VenueListSection />
             </li>
 
-            <li className="group  overflow-visible cursor-pointer flex  h-full items-center  hover:border-b-4 hover:border-b-white ">
+            <li className="group  overflow-visible cursor-pointer flex h-full items-center  hover:border-b-4 hover:border-b-white ">
               Real Wedding
               <RealWeddingSection />
             </li>
-            <li className="group  overflow-visible cursor-pointer flex  h-full items-center  hover:border-b-4 hover:border-b-white ">
+            <li className="group  overflow-visible cursor-pointer flex h-full items-center  hover:border-b-4 hover:border-b-white ">
               Blog
               <BlogsSection />
             </li>
 
-            <li className="group  overflow-visible cursor-pointer flex  h-full items-center  hover:border-b-4 hover:border-b-white ">
+            <li className="group  overflow-visible cursor-pointer flex h-full items-center  hover:border-b-4 hover:border-b-white ">
               Photos
               <PhotosSection />
             </li>
-            <li className="group  overflow-visible cursor-pointer flex  h-full items-center  hover:border-b-4 hover:border-b-white ">
+            <li className="group  overflow-visible cursor-pointer flex h-full items-center  hover:border-b-4 hover:border-b-white ">
               Vendors
               <div
                 className="flex flex-wrap items-start justify-start w-[50vw] h-fit rounded-md absolute top-14 left-0

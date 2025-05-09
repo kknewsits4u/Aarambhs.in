@@ -22,7 +22,7 @@ function App() {
 
   return (
     <>
-      <div className=" w-full flex flex-col items-center  " >
+      <div className=" w-full flex flex-col items-center" >
         <BrowserRouter>
           <ScrollToTop />
           <Navbar />
@@ -31,7 +31,7 @@ function App() {
             <Route path="/:city" element={<CityWiseDetails />} />
             <Route path="/blogs" element={<AllBlogPage />} />
             <Route path="/banquets" element={<AllBanquet />} />
-            <Route path="/vendors" element={<AllVendors />} />
+            <Route path="/vendors/:vendorid" element={<AllVendors />} />
             <Route path="/real-weddings" element={<AllRealWedding />} />
             <Route path="/photos" element={<AllPhotos />} />
             <Route path="/co-oporate-meeting" element={<Co_operateMettingPage />} />

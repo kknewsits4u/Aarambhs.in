@@ -38,7 +38,7 @@ const RatingComponent = () => {
               style={{ width: `${item.percent}%` }}
             ></div>
           </div>
-          <span className="text-xs text-gray-600 w-12 text-right">
+          <span className="text-sm lg:text-base text-gray-700 w-12 text-right">
             {item.reviews} review{item.reviews !== 1 && "s"}
           </span>
         </div>

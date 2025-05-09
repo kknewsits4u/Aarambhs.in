@@ -23,6 +23,11 @@ import ReviewCard from "./ReviewCard";
 import HotelEnquiryForm from "../../Components/HotelEnquiry/HotelEnquiryForm";
 
 const VenueDetails = () => {
+
+  const [open, setOpen] = useState(false);
+  const [showMore, setShowMore] = useState(false);
+  const [activeTab, setActiveTab] = useState("PORTFOLIO");
+
   const items = [
     <div
       className=" w-full h-full flex items-start justify-center bg-[#f2f2f2] "
@@ -64,10 +69,6 @@ const VenueDetails = () => {
       price: "35,00,000",
     },
   ];
-
-  const [open, setOpen] = useState(false);
-  const [showMore, setShowMore] = useState(false);
-  const [activeTab, setActiveTab] = useState("PORTFOLIO");
 
   const handlePriceDivExpend = () => {
     setOpen(!open);
